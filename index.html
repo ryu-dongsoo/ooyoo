@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="꼬끼오톡 · 우유" />
+  <meta name="theme-color" content="#FEE500" />
+  <title>🐓 꼬끼오톡 · 우유(Ooyoo) 스마트 고정 접속</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Malgun Gothic", sans-serif; }
+    body { background: #BACEE0; color: #191919; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+    .card { background: #ffffff; width: 100%; max-width: 400px; border-radius: 22px; padding: 28px 22px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); text-align: center; }
+    .logo { font-size: 46px; margin-bottom: 10px; }
+    h1 { font-size: 20px; font-weight: 800; color: #3C1E1E; margin-bottom: 6px; }
+    p.sub { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.45; }
+    .status-box { background: #FFF9DB; border: 1.5px solid #FEE500; border-radius: 14px; padding: 14px; font-size: 13.5px; font-weight: 600; color: #3C1E1E; margin-bottom: 18px; }
+    .btn-list { display: flex; flex-direction: column; gap: 10px; }
+    a.btn { display: block; text-decoration: none; padding: 13px 16px; border-radius: 12px; font-size: 14px; font-weight: 700; transition: opacity 0.15s; }
+    a.btn-primary { background: #FEE500; color: #3C1E1E; }
+    a.btn-secondary { background: #F1F3F5; color: #333; }
+    .meta { margin-top: 16px; font-size: 11.5px; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🐓🥛</div>
+    <h1>꼬끼오톡 · 우유(Ooyoo)</h1>
+    <p class="sub">박사님의 무제한 보안 터널(Tailscale / Cloudflare) 중 가장 빠른 통로로 자동 연결합니다.</p>
+    <div id="status" class="status-box">🔄 실시간 무제한 보안 터널 확인 중...</div>
+    <div id="links" class="btn-list"></div>
+    <div id="meta" class="meta"></div>
+  </div>
+  <script>
+    async function probe(url, timeoutMs = 2200) {
+      if (!url) return false;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+      try {
+        await fetch(url + '/api/state?t=' + Date.now(), { mode: 'no-cors', cache: 'no-store', signal: ctrl.signal });
+        clearTimeout(timer);
+        return true;
+      } catch (e) {
+        clearTimeout(timer);
+        return false;
+      }
+    }
+
+    async function start() {
+      const statusEl = document.getElementById('status');
+      const linksEl = document.getElementById('links');
+      const metaEl = document.getElementById('meta');
+      const params = new URLSearchParams(location.search);
+      const suffix = params.get('mode') === 'classic' ? '/classic' : '/';
+
+      let info = null;
+      try {
+        const apiRes = await fetch('https://api.github.com/repos/ryu-dongsoo/ooyoo/contents/tunnels.json?ref=main&t=' + Date.now(), {
+          headers: { 'Accept': 'application/vnd.github.v3.raw' },
+          cache: 'no-store'
+        });
+        if (apiRes.ok) info = await apiRes.json();
+      } catch (e) {}
+
+      if (!info) {
+        try {
+          const fallbackRes = await fetch('./tunnels.json?t=' + Date.now(), { cache: 'no-store' });
+          if (fallbackRes.ok) info = await fallbackRes.json();
+        } catch (e) {}
+      }
+
+      if (!info) {
+        statusEl.textContent = '⚠️ 터널 정보를 불러오지 못했습니다.';
+        return;
+      }
+
+      const tsUrl = info.tailscaleUrl || '';
+      const cfUrl = info.cloudflareUrl || '';
+      const localUrl = info.localUrl || '';
+
+      const html = [];
+      if (tsUrl) html.push('<a class="btn btn-primary" href="' + tsUrl + suffix + '">⭐ 1순위: Tailscale 고정 보안 주소 접속</a>');
+      if (cfUrl) html.push('<a class="btn btn-primary" href="' + cfUrl + suffix + '">🌐 2순위: Cloudflare 무제한 보안 주소 접속</a>');
+      if (localUrl) html.push('<a class="btn btn-secondary" href="' + localUrl + suffix + '">🏠 3순위: 집 Wi-Fi 직통 접속 (' + localUrl.replace('http://', '') + ')</a>');
+      linksEl.innerHTML = html.join('');
+      if (info.updatedAt) {
+        metaEl.textContent = '최근 서버 동기화: ' + new Date(info.updatedAt).toLocaleString('ko-KR');
+      }
+
+      if (params.get('noauto') === '1') {
+        statusEl.textContent = '아래 접속 통로 중 원하는 버튼을 눌러주세요.';
+        return;
+      }
+
+      const [tsOk, cfOk] = await Promise.all([probe(tsUrl, 2200), probe(cfUrl, 2200)]);
+      if (tsOk && tsUrl) {
+        statusEl.textContent = '✅ 1순위 Tailscale 고정 보안 통로로 이동합니다!';
+        location.replace(tsUrl + suffix);
+        return;
+      }
+      if (cfOk && cfUrl) {
+        statusEl.textContent = '✅ Cloudflare 무제한 보안 통로로 이동합니다!';
+        location.replace(cfUrl + suffix);
+        return;
+      }
+      if (cfUrl) {
+        statusEl.textContent = '🚀 무제한 보안 터널로 이동합니다...';
+        location.replace(cfUrl + suffix);
+      } else if (tsUrl) {
+        statusEl.textContent = '🚀 Tailscale 보안 터널로 이동합니다...';
+        location.replace(tsUrl + suffix);
+      }
+    }
+    start();
+  </script>
+</body>
+</html>

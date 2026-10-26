@@ -94,7 +94,7 @@
         return;
       }
 
-      const [tsOk, cfOk] = await Promise.all([probe(tsUrl, 2200), probe(cfUrl, 2200)]);
+      const [tsOk, cfOk] = await Promise.all([probe(tsUrl, 3500), probe(cfUrl, 3500)]);
       if (tsOk && tsUrl) {
         statusEl.textContent = '✅ 1순위 Tailscale 고정 보안 통로로 이동합니다!';
         location.replace(tsUrl + suffix);
@@ -105,12 +105,12 @@
         location.replace(cfUrl + suffix);
         return;
       }
-      if (cfUrl) {
+      if (tsUrl) {
+        statusEl.textContent = '🚀 Tailscale 고정 보안 터널로 이동합니다...';
+        location.replace(tsUrl + suffix);
+      } else if (cfUrl) {
         statusEl.textContent = '🚀 무제한 보안 터널로 이동합니다...';
         location.replace(cfUrl + suffix);
-      } else if (tsUrl) {
-        statusEl.textContent = '🚀 Tailscale 보안 터널로 이동합니다...';
-        location.replace(tsUrl + suffix);
       }
     }
     start();

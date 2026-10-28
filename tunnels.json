@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-10-28T09:10:33.782Z",
+  "updatedAt": "2026-10-28T09:12:16.227Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://firm-method-also-grammar.trycloudflare.com",
+      "cloudflareUrl": "https://limitations-between-supported-consumers.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://firm-method-also-grammar.trycloudflare.com",
-      "updatedAt": "2026-10-28T09:10:33.782Z"
+      "primaryUrl": "https://limitations-between-supported-consumers.trycloudflare.com",
+      "updatedAt": "2026-10-28T09:12:16.226Z"
     }
   },
-  "cloudflareUrl": "https://firm-method-also-grammar.trycloudflare.com",
+  "cloudflareUrl": "https://limitations-between-supported-consumers.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://firm-method-also-grammar.trycloudflare.com",
+  "primaryUrl": "https://limitations-between-supported-consumers.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }

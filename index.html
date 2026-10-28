@@ -4,37 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="꼬끼오톡 · 우유" />
-  <meta name="theme-color" content="#282C37" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#282C37" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282C37" />
-  <title>🐓 꼬끼오톡 · 우유(Ooyoo) 스마트 고정 접속</title>
+  <meta name="apple-mobile-web-app-title" content="우유 · 집/연구실" />
+  <meta name="theme-color" content="#181A1F" />
+  <title>🥛 우유(Ooyoo) 스마트 게이트웨이</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Malgun Gothic", sans-serif; }
-    body { background: #181A1F; color: #ECEFF4; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-    .card { background: #232730; border: 1px solid #323846; width: 100%; max-width: 400px; border-radius: 22px; padding: 28px 22px; box-shadow: 0 14px 36px rgba(0,0,0,0.45); text-align: center; }
-    .logo { font-size: 46px; margin-bottom: 10px; }
-    h1 { font-size: 20px; font-weight: 800; color: #ECEFF4; margin-bottom: 6px; }
-    p.sub { font-size: 13px; color: #9CA3AF; margin-bottom: 20px; line-height: 1.45; }
-    .status-box { background: #2A2F3A; border: 1.5px solid #4C566A; border-radius: 14px; padding: 14px; font-size: 13.5px; font-weight: 600; color: #ECEFF4; margin-bottom: 18px; }
-    .btn-list { display: flex; flex-direction: column; gap: 10px; }
-    a.btn { display: block; text-decoration: none; padding: 13px 16px; border-radius: 12px; font-size: 14px; font-weight: 700; transition: opacity 0.15s; }
-    a.btn-primary { background: #3B4252; color: #ECEFF4; border: 1px solid #4C566A; }
-    a.btn-secondary { background: #2A2E38; color: #ECEFF4; border: 1px solid #3A3F4B; }
-    .meta { margin-top: 16px; font-size: 11.5px; color: #6B7280; }
+    body { background: #121418; color: #ECEFF4; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 16px; }
+    .card { background: #1E222B; border: 1px solid #2E3440; width: 100%; max-width: 420px; border-radius: 24px; padding: 26px 20px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); text-align: center; }
+    .logo { font-size: 42px; margin-bottom: 8px; }
+    h1 { font-size: 20px; font-weight: 800; color: #ECEFF4; margin-bottom: 4px; }
+    p.sub { font-size: 13px; color: #9CA3AF; margin-bottom: 18px; line-height: 1.45; }
+    .status-box { background: #262B36; border: 1px solid #3B4252; border-radius: 14px; padding: 12px 14px; font-size: 13.5px; font-weight: 600; color: #E5E9F0; margin-bottom: 18px; }
+    .machine-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+    .machine-card { background: #252B37; border: 1.5px solid #3B4252; border-radius: 16px; padding: 16px; text-align: left; transition: all 0.2s ease; position: relative; }
+    .machine-card.online { border-color: #10B981; background: #1F2E2E; }
+    .machine-card.active-target { box-shadow: 0 0 0 2px #3B82F6; }
+    .m-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .m-title { font-size: 16px; font-weight: 700; color: #ECEFF4; display: flex; align-items: center; gap: 6px; }
+    .badge { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+    .badge-online { background: #064E3B; color: #34D399; border: 1px solid #059669; }
+    .badge-offline { background: #374151; color: #9CA3AF; }
+    .badge-checking { background: #1E3A8A; color: #60A5FA; }
+    .m-info { font-size: 12px; color: #9CA3AF; margin-bottom: 12px; line-height: 1.4; }
+    .btn-connect { display: block; width: 100%; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-size: 14px; font-weight: 700; background: #3B82F6; color: #FFFFFF; border: none; transition: background 0.15s; }
+    .btn-connect:active { background: #2563EB; }
+    .btn-connect.disabled { background: #374151; color: #6B7280; pointer-events: none; }
+    .footer-links { margin-top: 14px; font-size: 12px; color: #6B7280; display: flex; justify-content: center; gap: 14px; }
+    .footer-links a { color: #9CA3AF; text-decoration: none; }
+    .footer-links a:hover { color: #60A5FA; }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="logo">🐓🥛</div>
-    <h1>꼬끼오톡 · 우유(Ooyoo)</h1>
-    <p class="sub">박사님의 무제한 보안 터널(Tailscale / Cloudflare) 중 가장 빠른 통로로 자동 연결합니다.</p>
-    <div id="status" class="status-box">🔄 실시간 무제한 보안 터널 확인 중...</div>
-    <div id="links" class="btn-list"></div>
-    <div id="meta" class="meta"></div>
+    <div class="logo">🥛✨</div>
+    <h1>우유(Ooyoo) 스마트 게이트웨이</h1>
+    <p class="sub">박사님의 집과 연구실 컴퓨터 중 원하는 우유와 바로 교신합니다.</p>
+    
+    <div id="status" class="status-box">🔄 연결 상태 확인 중...</div>
+
+    <div class="machine-grid" id="machines">
+      <!-- Machine cards will be injected here -->
+    </div>
+
+    <div class="footer-links">
+      <a href="?target=home">🏠 집 전용 링크</a>
+      <span>•</span>
+      <a href="?target=office">🔬 연구실 전용 링크</a>
+      <span>•</span>
+      <a href="?noauto=1">⚙️ 수동 선택</a>
+    </div>
   </div>
+
   <script>
-    async function probe(url, timeoutMs = 2500) {
+    async function probe(url, timeoutMs = 2600) {
       if (!url) return false;
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -83,10 +105,10 @@
 
     async function start() {
       const statusEl = document.getElementById('status');
-      const linksEl = document.getElementById('links');
-      const metaEl = document.getElementById('meta');
+      const machinesEl = document.getElementById('machines');
       const params = new URLSearchParams(location.search);
-      const suffix = params.get('mode') === 'classic' ? '/classic' : '/';
+      const targetParam = params.get('target') || (params.get('office') === '1' ? 'office' : (params.get('home') === '1' ? 'home' : null));
+      const noAuto = params.get('noauto') === '1';
 
       const info = await fetchLatestTunnelInfo();
       if (!info) {
@@ -94,42 +116,98 @@
         return;
       }
 
-      const cfUrl = info.cloudflareUrl || '';
-      const localUrl = info.localUrl || '';
-      const tsUrl = info.tailscaleUrl || '';
-
-      const html = [];
-      if (cfUrl) html.push('<a class="btn btn-primary" href="' + cfUrl + suffix + '">🌐 1순위: 스마트폰 외부 · LTE · Wi-Fi 즉시 접속</a>');
-      if (localUrl) html.push('<a class="btn btn-secondary" href="' + localUrl + suffix + '">🏠 2순위: 집 Wi-Fi 초고속 직통 접속 (' + localUrl.replace('http://', '') + ')</a>');
-      if (tsUrl) html.push('<a class="btn btn-secondary" href="' + tsUrl + suffix + '">🔒 3순위: Tailscale 앱 전용 고정 주소 접속</a>');
-      linksEl.innerHTML = html.join('');
-      if (info.updatedAt) {
-        metaEl.textContent = '최근 서버 동기화: ' + new Date(info.updatedAt).toLocaleString('ko-KR');
+      const targets = info.targets || {};
+      // Fallback for v1 format
+      if (!targets.home && !targets.office) {
+        targets.home = {
+          name: '집 우유 🏠',
+          hostname: info.hostname || 'DAVID-HOME',
+          cloudflareUrl: info.cloudflareUrl || '',
+          tailscaleUrl: info.tailscaleUrl || '',
+          localUrl: info.localUrl || '',
+          updatedAt: info.updatedAt
+        };
       }
 
-      if (params.get('noauto') === '1') {
-        statusEl.textContent = '아래 접속 통로 중 원하는 버튼을 눌러주세요.';
-        return;
+      const machineList = [
+        { key: 'office', name: '연구실 우유 🔬', defaultHost: 'DESKTOP-8OEVML0', data: targets.office },
+        { key: 'home', name: '집 우유 🏠', defaultHost: 'DAVID-HOME', data: targets.home }
+      ];
+
+      statusEl.textContent = '🔍 실시간 접속 통로 점검 중...';
+
+      let html = '';
+      for (const m of machineList) {
+        const d = m.data || {};
+        const isTarget = targetParam === m.key;
+        html += '<div id="card-' + m.key + '" class="machine-card ' + (isTarget ? 'active-target' : '') + '">';
+        html += '  <div class="m-header">';
+        html += '    <div class="m-title">' + m.name + '</div>';
+        html += '    <span id="badge-' + m.key + '" class="badge badge-checking">점검 중...</span>';
+        html += '  </div>';
+        html += '  <div class="m-info" id="info-' + m.key + '">최근 동기화: ' + (d.updatedAt ? new Date(d.updatedAt).toLocaleTimeString('ko-KR') : '기록 없음') + '</div>';
+        const url = d.cloudflareUrl || d.tailscaleUrl || d.localUrl || '';
+        html += '  <a id="btn-' + m.key + '" class="btn-connect ' + (url ? '' : 'disabled') + '" href="' + (url || '#') + '">접속하기</a>';
+        html += '</div>';
+      }
+      machinesEl.innerHTML = html;
+
+      // Probe each machine in parallel
+      const probeResults = await Promise.all(machineList.map(async (m) => {
+        const d = m.data;
+        if (!d || !d.cloudflareUrl) return { key: m.key, online: false, url: '' };
+        const ok = await probe(d.cloudflareUrl, 2600);
+        return { key: m.key, online: ok, url: d.cloudflareUrl };
+      }));
+
+      let onlineCount = 0;
+      let singleOnline = null;
+
+      probeResults.forEach(res => {
+        const badgeEl = document.getElementById('badge-' + res.key);
+        const cardEl = document.getElementById('card-' + res.key);
+        const btnEl = document.getElementById('btn-' + res.key);
+
+        if (res.online) {
+          onlineCount++;
+          singleOnline = res;
+          badgeEl.className = 'badge badge-online';
+          badgeEl.textContent = '● 온라인';
+          cardEl.classList.add('online');
+          btnEl.classList.remove('disabled');
+        } else {
+          badgeEl.className = 'badge badge-offline';
+          badgeEl.textContent = '○ 오프라인';
+          cardEl.classList.remove('online');
+        }
+      });
+
+      // Handle redirect
+      if (targetParam) {
+        const targetResult = probeResults.find(r => r.key === targetParam);
+        if (targetResult && targetResult.online && !noAuto) {
+          statusEl.textContent = '✅ ' + (targetParam === 'office' ? '연구실' : '집') + ' 우유로 즉시 연결합니다!';
+          location.replace(targetResult.url);
+          return;
+        }
       }
 
-      if (cfUrl && await probe(cfUrl, 2800)) {
-        statusEl.textContent = '✅ 실시간 보안 터널로 즉시 이동합니다!';
-        location.replace(cfUrl + suffix);
-        return;
-      }
-      if (tsUrl && await probe(tsUrl, 1800)) {
-        statusEl.textContent = '✅ Tailscale 보안 통로로 이동합니다!';
-        location.replace(tsUrl + suffix);
-        return;
-      }
-      if (cfUrl) {
-        statusEl.textContent = '🚀 무제한 보안 터널로 이동합니다...';
-        location.replace(cfUrl + suffix);
-      } else if (localUrl) {
-        statusEl.textContent = '🏠 집 Wi-Fi 직통 주소로 이동합니다...';
-        location.replace(localUrl + suffix);
+      if (!noAuto) {
+        if (onlineCount === 1 && singleOnline) {
+          const name = singleOnline.key === 'office' ? '연구실 우유 🔬' : '집 우유 🏠';
+          statusEl.textContent = '✅ ' + name + '가 온라인입니다! 1초 후 자동 연결됩니다.';
+          setTimeout(() => { location.replace(singleOnline.url); }, 900);
+          return;
+        } else if (onlineCount > 1) {
+          statusEl.textContent = '🌟 두 컴퓨터가 모두 온라인입니다! 접속할 우유를 선택해 주세요.';
+        } else {
+          statusEl.textContent = '⚠️ 현재 켜져 있는 우유 서버가 없습니다.';
+        }
+      } else {
+        statusEl.textContent = '접속하실 우유를 선택해 주세요.';
       }
     }
+
     start();
   </script>
 </body>

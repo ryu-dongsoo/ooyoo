@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-10-29T02:22:50.201Z",
+  "updatedAt": "2026-10-29T02:23:59.193Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://volunteer-euro-expensive-time.trycloudflare.com",
+      "cloudflareUrl": "https://occur-substances-eagle-income.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://volunteer-euro-expensive-time.trycloudflare.com",
-      "updatedAt": "2026-10-29T02:22:50.201Z"
+      "primaryUrl": "https://occur-substances-eagle-income.trycloudflare.com",
+      "updatedAt": "2026-10-29T02:23:59.192Z"
     }
   },
-  "cloudflareUrl": "https://volunteer-euro-expensive-time.trycloudflare.com",
+  "cloudflareUrl": "https://occur-substances-eagle-income.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://volunteer-euro-expensive-time.trycloudflare.com",
+  "primaryUrl": "https://occur-substances-eagle-income.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }

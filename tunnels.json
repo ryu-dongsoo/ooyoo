@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-10-30T22:27:24.701Z",
+  "updatedAt": "2026-10-30T22:27:42.960Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://aimed-practice-percent-printers.trycloudflare.com",
+      "cloudflareUrl": "https://utc-buses-posts-developed.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://aimed-practice-percent-printers.trycloudflare.com",
-      "updatedAt": "2026-10-30T22:27:24.700Z"
+      "primaryUrl": "https://utc-buses-posts-developed.trycloudflare.com",
+      "updatedAt": "2026-10-30T22:27:42.959Z"
     }
   },
-  "cloudflareUrl": "https://aimed-practice-percent-printers.trycloudflare.com",
+  "cloudflareUrl": "https://utc-buses-posts-developed.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://aimed-practice-percent-printers.trycloudflare.com",
+  "primaryUrl": "https://utc-buses-posts-developed.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }

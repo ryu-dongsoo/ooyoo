@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-10-30T22:28:24.498Z",
+  "updatedAt": "2026-10-30T22:28:38.809Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -20,7 +20,7 @@
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
       "primaryUrl": "https://utc-buses-posts-developed.trycloudflare.com",
-      "updatedAt": "2026-10-30T22:28:24.498Z"
+      "updatedAt": "2026-10-30T22:28:38.807Z"
     }
   },
   "cloudflareUrl": "https://utc-buses-posts-developed.trycloudflare.com",

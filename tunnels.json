@@ -1,8 +1,8 @@
 {
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
-  "lastActive": "home",
-  "updatedAt": "2026-10-31T05:33:27.837Z",
+  "lastActive": "office",
+  "updatedAt": "2026-10-31T05:36:18.170Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -12,11 +12,20 @@
       "localUrl": "http://172.30.1.23:8081",
       "primaryUrl": "https://count-statutory-performs-down.trycloudflare.com",
       "updatedAt": "2026-10-31T05:33:27.836Z"
+    },
+    "office": {
+      "name": "연구실 우유 🔬",
+      "hostname": "DESKTOP-8OEVML0",
+      "cloudflareUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",
+      "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
+      "localUrl": "http://192.168.0.51:8081",
+      "primaryUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",
+      "updatedAt": "2026-10-31T05:36:18.169Z"
     }
   },
-  "cloudflareUrl": "https://count-statutory-performs-down.trycloudflare.com",
+  "cloudflareUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
-  "localUrl": "http://172.30.1.23:8081",
-  "primaryUrl": "https://count-statutory-performs-down.trycloudflare.com",
-  "hostname": "DAVID-HOME"
+  "localUrl": "http://192.168.0.51:8081",
+  "primaryUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",
+  "hostname": "DESKTOP-8OEVML0"
 }

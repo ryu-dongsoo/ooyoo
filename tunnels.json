@@ -1,8 +1,8 @@
 {
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
-  "lastActive": "home",
-  "updatedAt": "2026-10-31T01:29:06.298Z",
+  "lastActive": "office",
+  "updatedAt": "2026-10-31T04:23:22.184Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://oxford-cafe-oxide-explicit.trycloudflare.com",
+      "cloudflareUrl": "",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://oxford-cafe-oxide-explicit.trycloudflare.com",
-      "updatedAt": "2026-10-31T01:02:56.162Z"
+      "primaryUrl": "https://david-home.tail2b3b34.ts.net",
+      "updatedAt": "2026-10-31T04:23:22.183Z"
     }
   },
   "cloudflareUrl": "https://roommates-got-concrete-probability.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
-  "localUrl": "http://172.30.1.23:8081",
-  "primaryUrl": "https://roommates-got-concrete-probability.trycloudflare.com",
-  "hostname": "DAVID-HOME"
+  "localUrl": "http://192.168.0.51:8081",
+  "primaryUrl": "https://david-home.tail2b3b34.ts.net",
+  "hostname": "DESKTOP-8OEVML0"
 }

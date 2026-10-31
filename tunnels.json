@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-10-31T04:23:38.322Z",
+  "updatedAt": "2026-10-31T04:24:02.984Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -20,7 +20,7 @@
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
       "primaryUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",
-      "updatedAt": "2026-10-31T04:23:38.321Z"
+      "updatedAt": "2026-10-31T04:24:02.984Z"
     }
   },
   "cloudflareUrl": "https://drug-collection-horizontal-mike.trycloudflare.com",

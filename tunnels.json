@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-11-18T03:28:59.990Z",
+  "updatedAt": "2026-11-18T03:29:12.577Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "",
+      "cloudflareUrl": "https://orlando-pipes-tested-recipient.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://david-home.tail2b3b34.ts.net",
-      "updatedAt": "2026-11-18T03:28:59.989Z"
+      "primaryUrl": "https://orlando-pipes-tested-recipient.trycloudflare.com",
+      "updatedAt": "2026-11-18T03:29:12.576Z"
     }
   },
-  "cloudflareUrl": "https://epinions-entrepreneurs-tourism-plans.trycloudflare.com",
+  "cloudflareUrl": "https://orlando-pipes-tested-recipient.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://david-home.tail2b3b34.ts.net",
+  "primaryUrl": "https://orlando-pipes-tested-recipient.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }

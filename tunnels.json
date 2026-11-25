@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-11-25T07:05:13.972Z",
+  "updatedAt": "2026-11-25T07:13:37.131Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://consolidated-gilbert-curve-alan.trycloudflare.com",
+      "cloudflareUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://consolidated-gilbert-curve-alan.trycloudflare.com",
-      "updatedAt": "2026-11-25T07:05:13.971Z"
+      "primaryUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
+      "updatedAt": "2026-11-25T07:13:37.124Z"
     }
   },
-  "cloudflareUrl": "https://consolidated-gilbert-curve-alan.trycloudflare.com",
+  "cloudflareUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://consolidated-gilbert-curve-alan.trycloudflare.com",
+  "primaryUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }

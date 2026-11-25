@@ -2,7 +2,7 @@
   "portalUrl": "https://ryu-dongsoo.github.io/ooyoo/",
   "version": "2.0",
   "lastActive": "office",
-  "updatedAt": "2026-11-20T18:04:02.028Z",
+  "updatedAt": "2026-11-25T07:04:33.412Z",
   "targets": {
     "home": {
       "name": "집 우유 🏠",
@@ -16,16 +16,16 @@
     "office": {
       "name": "연구실 우유 🔬",
       "hostname": "DESKTOP-8OEVML0",
-      "cloudflareUrl": "https://polyester-completing-question-gourmet.trycloudflare.com",
+      "cloudflareUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
       "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
       "localUrl": "http://192.168.0.51:8081",
-      "primaryUrl": "https://polyester-completing-question-gourmet.trycloudflare.com",
-      "updatedAt": "2026-11-20T18:04:02.028Z"
+      "primaryUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
+      "updatedAt": "2026-11-25T07:04:33.411Z"
     }
   },
-  "cloudflareUrl": "https://polyester-completing-question-gourmet.trycloudflare.com",
+  "cloudflareUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
   "tailscaleUrl": "https://david-home.tail2b3b34.ts.net",
   "localUrl": "http://192.168.0.51:8081",
-  "primaryUrl": "https://polyester-completing-question-gourmet.trycloudflare.com",
+  "primaryUrl": "https://bought-fuji-knows-veterinary.trycloudflare.com",
   "hostname": "DESKTOP-8OEVML0"
 }
